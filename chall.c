@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void vuln() {
-	char name[64];
+void vulnerable_function() {
+	char input[64];
 
 	system("printf \"Hey!  I'll repeat anything you say! \n\"");
-	fgets(name, 64, stdin);
-	printf(name);
+	fgets(input, 64, stdin);
+	printf(input);
 }
 
 int main(){
@@ -14,6 +14,6 @@ int main(){
 	puts("Howdy!");
 	printf("You might find this useful: %x\n", puts);
 	while(1) {
-		vuln();
+		vulnerable_function();
 	}
 }
